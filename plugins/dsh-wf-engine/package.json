@@ -1,0 +1,43 @@
+{
+  "name": "dsh-wf-engine",
+  "version": "0.2.0",
+  "description": "编程 Agent 工作流引擎（DSH 宿主平面插件）：任务状态机 INTAKE→INSPECT→CLARIFY→PLAN→RESEARCH→BASELINE_EVAL→IMPLEMENT→VERIFY→INDEPENDENT_REVIEW→REPAIR→DELIVERY→LEARN、checkpoint/resume、角色化审查门禁、eval 质量门禁、失败分类恢复、去敏日志与成本记录。将《强大编程Agent插件制作指令.md》的能力按 DSH 运行时等价分层移植（Codex .codex-plugin 规格差异见 README）。",
+  "private": false,
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./state-machine": "./lib/state-machine.js",
+    "./engine": "./lib/engine.js",
+    "./project-intelligence": "./lib/project-intelligence.js",
+    "./store": "./lib/store.js",
+    "./redact": "./lib/redact.js",
+    "./evals": "./lib/evals.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "scripts",
+    "tests",
+    "docs",
+    "templates",
+    "README.md",
+    "cordis.patch.yml"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "cordis": ">=4.0.0-rc <5"
+  },
+  "scripts": {
+    "build": "bash scripts/build.sh",
+    "test": "node --test tests/"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "dependencies": {
+    "typescript": "^5.9.3"
+  }
+}

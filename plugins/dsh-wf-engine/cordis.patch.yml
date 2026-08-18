@@ -1,0 +1,4 @@
+# dsh-wf-engine bundle 层：把插件挂进 profile（持久装配；注入器 dev_install_package 亦会写入同等条目）
+- insert:
+    - id: wf-engine
+      name: 'dsh-wf-engine'

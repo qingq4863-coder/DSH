@@ -1,0 +1,4 @@
+﻿# dsh-mode-boost bundle 层：把插件挂进 profile
+- insert:
+    - id: mode-boost
+      name: '@dsh-external/dsh-mode-boost'
