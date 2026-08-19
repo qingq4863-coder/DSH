@@ -8,10 +8,11 @@
 - Repository: `https://github.com/qingq4863-coder/DSH`
 - Default branch: `main`
 - Repository tree SHA observed at initial audit: `7346ebaf598b29556674b6361f12e16e5bdfb3dc`
-- Accepted plugin commit: `f7e98a8a525b211ae5666296d1ddcc49f5027a0d`
-- Accepted commit message: `Fix acceptance evidence and route parity`
-- Previous acceptance commit: `7dae322a8a46f98bf4d094189e068b62caf4a534`
-- Note: the checkout test first used stale ignored `lib`; the checkout was rebuilt and then all 38 tests passed.
+- Accepted plugin commit: `2906dc0543bd66f2acad10a675c9da16257dfbbb`
+- Accepted commit message: `Ship compiled adapter and fix disclosure routing`
+- Previous acceptance commit: `c74c97df9259126ded0a3e06bb0ca29a65584c3d`
+- Published `lib/index.js` SHA-256: `487207B4A2E0106D159761F43473A4F8A821E47072290BA3E61DC84BD6FCD2AA`
+- Note: the checkout test first used stale ignored `lib`; the checkout was rebuilt and then all 39 tests passed.
 - Recursive tree: `https://api.github.com/repos/qingq4863-coder/DSH/git/trees/main?recursive=1`
 - Remote mutation: the plugin was intentionally published to this user-owned repository; no other remote systems were modified.
 
@@ -80,12 +81,12 @@ This package is not upstream semantic parity. Its accepted scope is plan generat
 - Web profile composition receipt: command `dsh --profile web --help`; observed usage output and exit 0
 - Hot reload receipt: `before: [active]`, `after: [active]`
 - Note: these are host command observations from this acceptance run, not model self-reported PASS.
-- Remote GitHub mutation: intentionally not performed
+- Remote GitHub mutation: the adapter and acceptance updates were intentionally published to the user-owned DSH repository.
 
 ## Future re-check
 
 1. Fetch the user repository default-branch tree SHA.
-2. Compare it with the last accepted commit `7dae322a8a46f98bf4d094189e068b62caf4a534` and fetch a new tree SHA.
+2. Compare it with the last accepted commit `2906dc0543bd66f2acad10a675c9da16257dfbbb` and fetch a new tree SHA.
 3. Inspect plugin manifests and `docs/dsh-plugins-for-tui.md` for compatibility changes.
 4. Re-run local tests, build, reload, and headless cold start for accepted changes.
 5. Replace this receipt only after the new remote evidence is reviewed.
