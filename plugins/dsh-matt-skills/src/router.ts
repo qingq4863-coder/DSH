@@ -64,7 +64,9 @@ export function validateRouteCalls(calls: RouteCall[]): string[] {
       if (previous && previous.conditional !== call.conditional) errors.push('route tool and evidence map conditional flags must match')
     }
     if (['matt_diagnosis_loop', 'matt_tdd_slice', 'matt_review_diff', 'matt_research_brief', 'matt_disclosure_audit', 'matt_context_pointer'].includes(call.tool)) {
-      if (calls[i + 1]?.tool !== 'matt_wf_evidence_map') errors.push('route tool must be followed by evidence map')
+      const nextTool = calls[i + 1]?.tool
+      const disclosureChain = call.tool === 'matt_disclosure_audit' && nextTool === 'matt_context_pointer'
+      if (nextTool !== 'matt_wf_evidence_map' && !disclosureChain) errors.push('route tool must be followed by evidence map')
       if (call.tool === 'matt_diagnosis_loop' && (call.args.symptom !== expectedTask || call.args.seam !== expectedSeam)) errors.push('diagnosis args must match contract')
       if (call.tool === 'matt_tdd_slice' && (call.args.behavior !== expectedTask || call.args.seam !== expectedSeam)) errors.push('tdd args must match contract')
       if (call.tool === 'matt_review_diff' && (call.args.scope !== expectedTask || call.args.spec !== expectedTask)) errors.push('review args must match contract')
@@ -105,6 +107,7 @@ export function routeCalls(task: string, seam = '<observable seam>', command = '
     )
     if (flow === 'disclosure') calls.push(
       { tool: 'matt_disclosure_audit', stage: flow, conditional, args: { document: task } },
+      { tool: 'matt_context_pointer', stage: flow, conditional, args: { topic: task, branches: task, path: 'authoritative guidance' } },
       { tool: 'matt_wf_evidence_map', stage: flow, conditional, args: { discipline: flow, task, command } },
     )
   }

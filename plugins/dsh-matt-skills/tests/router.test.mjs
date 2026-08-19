@@ -130,6 +130,13 @@ test('workflow starts with contract and ends with review', async () => {
 
 for (const [task, expected] of cases) test(task, () => assert.deepEqual(routeTask(task), expected))
 test('unknown task remains unclassified', () => assert.deepEqual(routeTask('整理一下'), []))
+test('disclosure route includes context pointer before evidence map', async () => {
+  const { routeCalls } = await import('../lib/router.js')
+  const calls = routeCalls('更新 Agent 指令和技能上下文', 'seam', 'npm test')
+  assert.deepEqual(calls.filter(call => call.stage === 'disclosure').map(call => call.tool), ['matt_disclosure_audit', 'matt_context_pointer', 'matt_wf_evidence_map'])
+  assert.deepEqual(validateRouteCalls(calls), [])
+})
+
 test('workflow preserves clarify fallback for unknown tasks', async () => {
   const { routeWorkflow } = await import('../lib/router.js')
   assert.deepEqual(routeWorkflow('整理一下'), ['matt_acceptance_contract', 'matt_contract_wf_plan', 'matt_task_route', 'wf_review'])
