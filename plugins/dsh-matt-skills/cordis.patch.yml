@@ -1,0 +1,4 @@
+# dsh-matt-skills bundle layer
+- insert:
+    - id: dsh-matt-skills
+      name: '@dsh-external/dsh-matt-skills'
