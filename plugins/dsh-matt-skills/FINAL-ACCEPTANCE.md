@@ -24,7 +24,16 @@
 
 ## Matt skill coverage
 
-The local adapter covers the 35 upstream skill concepts as either DSH-native plans or explicit host-safe boundaries. Equivalence means preserved engineering intent, not copied filenames. The adapter deliberately does not execute credentialed or destructive operations.
+The local adapter covers the major engineering concepts from the upstream inventory, but it does not implement all 35 upstream skills. Equivalence means preserved engineering intent, not copied filenames. The adapter deliberately does not execute credentialed or destructive operations.
+
+### Acceptance status by upstream skill
+
+- Native or equivalent plan: code-review, codebase-design, diagnosing-bugs, domain-modeling, grill-with-docs, improve-codebase-architecture, prototype, research, resolving-merge-conflicts, tdd, to-spec, to-tickets, triage, wayfinder, grilling, wait-what, writing-for-agents.
+- Partial or adapter-specific: ask-matt, implement, setup-matt-pocock-skills, wizard, and host-specific installation/configuration flows.
+- Not implemented: claude-handoff, loop-me, setup-ts-deep-modules, writing-beats, writing-fragments, writing-shape, git-guardrails-claude-code, migrate-to-shoehorn, scaffold-exercises, setup-pre-commit, grill-me, handoff, teach, to-questionnaire.
+- Cross-cutting adapter additions rather than upstream skill parity: acceptance contracts, route plans, executable calls, wf evidence maps, upstream inventory/sync, install lifecycle, and external operation plans.
+
+A plan tool does not perform the named operation. Research does not fetch or write a brief, ticket planning does not create tracker issues, and lifecycle/external-operation tools do not install, publish, or mutate external systems. Host receipts are required for those actions.
 
 ### Native plans
 

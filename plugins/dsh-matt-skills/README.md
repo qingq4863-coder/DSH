@@ -21,7 +21,7 @@
 - matt_acceptance_contract：把需求转为可观察验收契约。
 - matt_contract_wf_plan：把契约映射为 wf 执行清单。
 - matt_wf_evidence_map：把 TDD、诊断、审查映射到 wf_*。
-- matt_research_brief：组织一手来源研究和引用。
+- matt_research_brief：规划一手来源研究和引用；只输出研究结构，不自动抓取来源或写 Markdown 文件。
 - matt_disclosure_audit：审计提示词和文档的渐进披露。
 - matt_context_pointer：生成单一事实源的上下文指针。
 - matt_grilling_plan：围绕当前决策前沿逐分支澄清目标、约束、失败模式和验收。
@@ -29,7 +29,7 @@
 - matt_codebase_design：识别深模块和小接口，明确依赖、契约、测试 seam 与回滚边界。
 - matt_architecture_survey：扫描架构深化机会，输出有证据、可选择、可回滚的候选，不自动重构。
 - matt_to_spec：把已确认的对话事实和决策综合成可实施规格，不补造缺失需求。
-- matt_to_tickets：把规格拆成垂直 tracer-bullet tickets，声明阻塞边、验收证明和回滚。
+- matt_to_tickets：把规格拆成垂直 tracer-bullet ticket 草案，声明阻塞边、验收证明和回滚；不创建外部 tracker 条目。
 - matt_writing_for_agents：审计 agent-facing 文档的术语、触发器、指针、不变量和完成标准。
 - matt_wayfinder：在目标不清或路径分叉时，找出当前最小决策和下一步事实。
 - matt_wait_what：重写没有落地的沟通，明确受众、行动、决策、门禁和可观察回应。

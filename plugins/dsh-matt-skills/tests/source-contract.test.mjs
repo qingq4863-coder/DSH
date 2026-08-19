@@ -72,6 +72,11 @@ test('pinned upstream receipt remains complete', () => {
   assert.match(upstreamReceipt, /does not claim that external systems were modified/)
 })
 
+test('upstream parity status remains explicit', () => {
+  assert.match(finalAcceptance, /does not implement all 35 upstream skills/)
+  for (const marker of ['Partial or adapter-specific:', 'Not implemented:', 'A plan tool does not perform the named operation.']) assert.equal(finalAcceptance.includes(marker), true)
+})
+
 test('final GitHub acceptance receipt remains pinned', () => {
   assert.match(finalAcceptance, /qingq4863-coder\/DSH/)
   assert.match(finalAcceptance, /7346ebaf598b29556674b6361f12e16e5bdfb3dc/)
