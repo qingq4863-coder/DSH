@@ -7,9 +7,10 @@
 - Public repositories observed: `1`
 - Repository: `https://github.com/qingq4863-coder/DSH`
 - Default branch: `main`
-- Repository tree SHA observed: `7346ebaf598b29556674b6361f12e16e5bdfb3dc`
-- Latest commit: `7346ebaf598b29556674b6361f12e16e5bdfb3dc`
-- Latest commit message: `Publish terminal-compatible DSH plugins`
+- Repository tree SHA observed at initial audit: `7346ebaf598b29556674b6361f12e16e5bdfb3dc`
+- Accepted plugin commit: `7dae322a8a46f98bf4d094189e068b62caf4a534`
+- Accepted commit message: `Clarify Matt skills acceptance coverage`
+- Previous publication commit: `304f02f61982da687329772a4432e4e04e2d4ceb`
 - Recursive tree: `https://api.github.com/repos/qingq4863-coder/DSH/git/trees/main?recursive=1`
 - Remote mutation: none; this acceptance is read-only.
 
@@ -61,14 +62,16 @@ These are not silently marked complete: they require a host operation with expli
 - Router/protocol regression: pass
 - Package build: pass
 - Hot reload: active fiber before and after reload
-- Headless cold start: `RECEIPT_HARDENING_HEADLESS_OK`
-- Web profile composition: `dsh --profile web --help` pass
+- Headless cold start receipt: command `dsh --profile headless "请只回答 ACCEPTANCE_AUDIT_HEADLESS_OK"`; observed `ACCEPTANCE_AUDIT_HEADLESS_OK`
+- Web profile composition receipt: command `dsh --profile web --help`; observed usage output and exit 0
+- Hot reload receipt: `before: [active]`, `after: [active]`
+- Note: these are host command observations from this acceptance run, not model self-reported PASS.
 - Remote GitHub mutation: intentionally not performed
 
 ## Future re-check
 
 1. Fetch the user repository default-branch tree SHA.
-2. Compare it with `7346ebaf598b29556674b6361f12e16e5bdfb3dc`.
+2. Compare it with the last accepted commit `7dae322a8a46f98bf4d094189e068b62caf4a534` and fetch a new tree SHA.
 3. Inspect plugin manifests and `docs/dsh-plugins-for-tui.md` for compatibility changes.
 4. Re-run local tests, build, reload, and headless cold start for accepted changes.
 5. Replace this receipt only after the new remote evidence is reviewed.

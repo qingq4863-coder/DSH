@@ -22,7 +22,8 @@ export function routeTools(task: string): string[] {
 }
 
 export function routeWorkflow(task: string): string[] {
-  return ['matt_acceptance_contract', 'matt_contract_wf_plan', ...routeTools(task), 'wf_review']
+  const tools = routeTools(task)
+  return ['matt_acceptance_contract', 'matt_contract_wf_plan', ...(tools.length ? tools : ['matt_task_route']), 'wf_review']
 }
 
 export type RouteCall = { tool: string; stage: string; conditional: boolean; args: Record<string, string> }
