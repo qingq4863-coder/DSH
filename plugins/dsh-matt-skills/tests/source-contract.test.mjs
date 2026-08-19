@@ -80,7 +80,7 @@ test('upstream parity status remains explicit', () => {
 test('final GitHub acceptance receipt remains pinned', () => {
   assert.match(finalAcceptance, /qingq4863-coder\/DSH/)
   assert.match(finalAcceptance, /7346ebaf598b29556674b6361f12e16e5bdfb3dc/)
-  assert.match(finalAcceptance, /Remote mutation: none/)
+  assert.match(finalAcceptance, /Remote mutation: the plugin was intentionally published/)
   assert.match(finalAcceptance, /dsh-wf-engine/)
   assert.match(finalAcceptance, /dsh-context-doctor/)
 })

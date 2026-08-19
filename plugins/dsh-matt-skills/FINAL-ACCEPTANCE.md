@@ -8,11 +8,12 @@
 - Repository: `https://github.com/qingq4863-coder/DSH`
 - Default branch: `main`
 - Repository tree SHA observed at initial audit: `7346ebaf598b29556674b6361f12e16e5bdfb3dc`
-- Accepted plugin commit: `7dae322a8a46f98bf4d094189e068b62caf4a534`
-- Accepted commit message: `Clarify Matt skills acceptance coverage`
-- Previous publication commit: `304f02f61982da687329772a4432e4e04e2d4ceb`
+- Accepted plugin commit: `f7e98a8a525b211ae5666296d1ddcc49f5027a0d`
+- Accepted commit message: `Fix acceptance evidence and route parity`
+- Previous acceptance commit: `7dae322a8a46f98bf4d094189e068b62caf4a534`
+- Note: the checkout test first used stale ignored `lib`; the checkout was rebuilt and then all 38 tests passed.
 - Recursive tree: `https://api.github.com/repos/qingq4863-coder/DSH/git/trees/main?recursive=1`
-- Remote mutation: none; this acceptance is read-only.
+- Remote mutation: the plugin was intentionally published to this user-owned repository; no other remote systems were modified.
 
 ## Published plugin inventory
 
@@ -55,6 +56,19 @@ A plan tool does not perform the named operation. Research does not fetch or wri
 - host-specific Claude Code installation behavior
 
 These are not silently marked complete: they require a host operation with explicit approval and real evidence.
+
+## Verdict
+
+`CONDITIONALLY ACCEPTED AS A PLANNING-ONLY DSH ADAPTER`
+
+This package is not upstream semantic parity. Its accepted scope is plan generation, routing, evidence mapping, and host-safe lifecycle guidance. Execution parity, upstream skill directory parity, and artifact-producing workflows remain open work.
+
+## Independent findings disposition
+
+- Local source provenance: the source directory is not itself a Git checkout; immutable provenance is provided by the GitHub checkout commit above.
+- Runtime evidence: host command observations are recorded below; no browser screenshot, browser_fact, fiber UID, or dedicated runtime registration receipt was generated in this run.
+- Test depth: current tests are contract/logic tests; they do not prove every tool schema, registration disposal, filesystem/process/network non-mutation, or GUI behavior.
+- Semantic parity: upstream skills listed as partial or not implemented remain explicitly excluded from the parity claim.
 
 ## Acceptance gates
 
